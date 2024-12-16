@@ -1,4 +1,7 @@
+import java.util.Scanner;
+
 public class ukoly {
+    static Scanner sc = new Scanner(System.in);
 
     public int cislo;
     public String slovo;
@@ -8,6 +11,7 @@ public class ukoly {
     public int cislo3;
     public int vetsi;
     public int mensi;
+    public int necxo;
 
 
     public void neco() {
@@ -16,79 +20,52 @@ public class ukoly {
         }
     }
 
-    public void setcislo(int cislo) {
-        this.cislo = cislo;
+
+    public void setnecxo(int necxo) {
+        this.necxo = necxo;
     }
 
-    public void setslovo(String slovo) {
-        this.slovo = slovo;
-    }
-
-    public void setprvocislo(int prvocislo) {
-        this.prvocislo = prvocislo;
-    }
-
-    public void setCislo1(int cislo1) {
-        this.cislo1 = cislo1;
-    }
-
-    public void setCislo2(int cislo2) {
-        this.cislo1 = cislo2;
-    }
-
-    public void setCislo3(int cislo3) {
-        this.cislo1 = cislo3;
-    }
-
-    public void vypisslovo() {
-        System.out.println(slovo);
-    }
 
     public void vypiscislo() {
         System.out.println(cislo);
     }
 
     public void cisilka() {
-        if (cislo < 0) {
-            System.out.println("bylo zadáno záporné číslo");
-        } else if (cislo == 0) {
-            System.out.println("bya zadána 0");
-        } else if (cislo > 12) {
-            System.out.println("bylo zadáno moc velké číslo");
-        } else if (cislo == 1) {
-            System.out.println("Jedna");
-        } else if (cislo == 2) {
-            System.out.println("Dva");
-        } else if (cislo == 3) {
-            System.out.println("tři");
-        } else if (cislo == 4) {
-            System.out.println("Čtyři");
-        } else if (cislo == 5) {
-            System.out.println("Pět");
-        } else if (cislo == 6) {
-            System.out.println("Šest");
-        } else if (cislo == 7) {
-            System.out.println("Sedm");
-        } else if (cislo == 8) {
-            System.out.println("Osm");
-        } else if (cislo == 9) {
-            System.out.println("Devět");
-        } else if (cislo == 10) {
-            System.out.println("Deset");
-        } else if (cislo == 11) {
-            System.out.println("Jedenáct");
+        System.out.println("Zadej číslo: ");
+        cislo = sc.nextInt();
+
+        switch (cislo) {
+            case 1 -> System.out.println("Jedna");
+            case 2 -> System.out.println("Dva");
+            case 3 -> System.out.println("tři");
+            case 4 -> System.out.println("Čtyři");
+            case 5 -> System.out.println("Pět");
+            case 6 -> System.out.println("Šest");
+            case 7 -> System.out.println("Sedm");
+            case 8 -> System.out.println("Osm");
+            case 9 -> System.out.println("Devět");
+            case 10 -> System.out.println("Deset");
+            case 11 -> System.out.println("Jedenáct");
+            case 12 -> System.out.println("Dvanáct");
+            default -> System.out.println("Zadej jiné číslo");
+
+
         }
 
 
     }
 
     public void nasobky() {
+        System.out.println("Zadej násobek");
         for (int nasobek = 1; nasobek <= 20; nasobek++) {
             System.out.println(5 * nasobek);
         }
     }
 
     public void prvocsilo() {
+        System.out.println("Zadej nějaké prvočíslo:");
+        prvocislo = sc.nextInt();
+
         if (prvocislo <= 1) {
             System.out.println("Číslo není prvočíslo");
             return;
@@ -105,6 +82,13 @@ public class ukoly {
     }
 
     public void poznejto() {
+        System.out.println("Zadej 1 číslo: ");
+        cislo1 = sc.nextInt();
+        System.out.println("Zadej 2 číslo: ");
+        cislo2 = sc.nextInt();
+        System.out.println("Zadej 3 číslo: ");
+        cislo3 = sc.nextInt();
+
 
         if ((cislo1 > cislo2) && (cislo1 > cislo3)) {
             vetsi = cislo1;
@@ -126,7 +110,7 @@ public class ukoly {
             mensi = cislo3;
         }
 
-        double deleni = (double) vetsi /mensi;
+        double deleni = (double) vetsi / mensi;
 
         System.out.println(mensi);
         System.out.println(vetsi);
@@ -134,5 +118,38 @@ public class ukoly {
     }
 
 
-}
+    public void textmenu() {
+
+
+
+
+        for(boolean a = true; a;) {
+            System.out.println("Jaký úkol chceš prověst od 1-10" );
+            necxo=sc.nextInt();
+
+            switch (necxo) {
+                case 1 -> neco();
+                case 2 -> cisilka();
+                case 3 -> prvocsilo();
+                case 4 -> poznejto();
+                case 5 -> vypiscislo();
+                case 6 -> nasobky();
+                default -> System.out.println("úkol zde není");
+
+            }
+            System.out.println("Chceš pokračovat ANO/NE");
+            sc.nextLine();
+            String k = sc.nextLine();
+          if(k.equals("NE")){
+              a=false;
+          }
+
+
+
+            }
+
+        }
+    }
+
+
 

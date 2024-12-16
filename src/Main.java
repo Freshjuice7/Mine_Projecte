@@ -4,8 +4,34 @@ public class Main {
     public static void main(String[] args) {
 
         ukoly ukol= new ukoly();
-        ukol.neco();
 
+
+        ukol.textmenu();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
         System.out.println("napiš slovo: ");
         ukol.setslovo(sc.nextLine());
         ukol.vypisslovo();
@@ -29,7 +55,7 @@ public class Main {
 
         ukol.poznejto();
 
-
+*/
 
 
 
